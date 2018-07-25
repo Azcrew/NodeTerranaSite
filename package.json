@@ -1,0 +1,33 @@
+{
+  "name": "terrana-server",
+  "version": "1.0.0",
+  "description": "an server to web page, api and mobile application",
+  "main": "app.js",
+  "scripts": {
+    "start": "sudo nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@terrana.ddns.net/home/git/back-end"
+  },
+  "keywords": [
+    "node.js",
+    "restfull",
+    "api",
+    "terrana",
+    "rpg",
+    "game"
+  ],
+  "author": "Bruno José Spolavori",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.2.0",
+    "mongodb": "^2.2.36"
+  },
+  "devDependencies": {}
+}

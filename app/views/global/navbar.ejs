@@ -1,0 +1,115 @@
+<html>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand h1 mb-0"> Terrana </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="navbar-nav mr-auto">
+                    <li class="navbar-item">
+                        <a href="/system" class="nav-link"> Sistema </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="/documentation" class="nav-link"> Documentação </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="/api" class="nav-link"> API </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="/contact" class="nav-link"> Contatos </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <!-- Pre login => Logar/registar -->
+                    <!-- <% if(true) { %> -->
+                    <!-- Registrar -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
+                        <div class="dropdown-menu bg-dark">
+                            <div class="container">
+
+                                <div class="text-center text-muted h4">
+                                    <b>Registrar</b>
+                                </div>
+
+                                <form action="/register" method="POST">
+                                    <div id="msg"></div>
+                                    <input type="text" name="name" tabindex="1" class="form-control login my-3" placeholder="Nome">
+                                    <input type="text" name="username" id="username" tabindex="2" class="form-control login my-3" placeholder="Usuario">
+                                    <input type="password" name="password" tabindex="3" class="form-control login my-3" placeholder="Senha">
+                                    <input type="password" name="repeat" tabindex="4" class="form-control login my-3" placeholder="Repetir Senha">
+                                    
+                                    <div class="text-center">
+                                        <input type="submit" tabindex="4" class="btn btn-danger" value="Registrar">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Login -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Login</a>
+                        <div class="dropdown-menu bg-dark">
+                            <div class="container">
+
+                                <div class="text-center text-muted h4">
+                                    <b>Login</b>
+                                </div>
+
+                                <form action="/login" method="POST">
+
+                                    <input type="text" name="username" tabindex="1" class="form-control login my-3" placeholder="Usuario">
+                                    <input type="password" name="password" tabindex="2" class="form-control login my-3" placeholder="Senha">
+
+                                    <div class="form-row">
+                                        <div class="form-group col-8">
+                                            <div class="form-check">
+                                                <label for="remember" class="form-check-label text-muted">
+                                                    <input type="checkbox" tabindex="3" name="remember" id="remember" class="form-check-input"> Lembrar
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="submit" tabindex="4" class="btn btn-danger" value="Login">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- <% } else { %> -->
+                    <!-- Pos login / Jogar -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
+                        <div class="dropdown-menu bg-dark">
+                            <div class="container">
+                                <a href="#" class="dropdown-item text-secondary"> Jogar </a>
+                                <a href="#" class="dropdown-item text-secondary"> Mestrar </a>
+                                <a href="#" class="dropdown-item text-secondary"> Espectar </a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <% } %> -->
+                </ul>
+
+                <form action="/search" class="form-inline my-2" method="POST">
+                    <input name="search" class="form-control search mr-2 ml-4" type="search" placeholder="Buscar">
+                    <button class="btn btn-sm btn-danger" type="submit">
+                        <span class="fa fa-search"> </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <script src="js/isUserAvailable.js"></script>
+</body>
+
+</html>

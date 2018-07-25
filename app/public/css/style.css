@@ -1,0 +1,22 @@
+body{
+    padding-top: 55px
+}
+input.login{
+    width: 250px;
+}
+input.search{
+    width: 250px;
+}
+
+.scrollspy{
+    max-width: 500px;
+}
+.scrollspysite{
+    position: relative;
+    overflow: auto;
+    height: 400px;
+}
+
+ul.dropdown-lr {
+    width: 300px;
+}
