@@ -27,7 +27,6 @@
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
-                    <!-- Pre login => Logar/registar -->
                     <!-- <% if(true) { %> -->
                     <!-- Registrar -->
                     <li class="dropdown">
@@ -39,12 +38,12 @@
                                     <b>Registrar</b>
                                 </div>
 
-                                <form action="/register" method="POST">
+                                <form id="register">
                                     <div id="msg"></div>
-                                    <input type="text" name="name" tabindex="1" class="form-control login my-3" placeholder="Nome">
+                                    <input type="text" name="name" id="name" tabindex="1" class="form-control login my-3" placeholder="Nome">
                                     <input type="text" name="username" id="username" tabindex="2" class="form-control login my-3" placeholder="Usuario">
-                                    <input type="password" name="password" tabindex="3" class="form-control login my-3" placeholder="Senha">
-                                    <input type="password" name="repeat" tabindex="4" class="form-control login my-3" placeholder="Repetir Senha">
+                                    <input type="password" name="password" id="password" tabindex="3" class="form-control login my-3" placeholder="Senha">
+                                    <input type="password" name="repeat" id="repeat" tabindex="4" class="form-control login my-3" placeholder="Repetir Senha">
                                     
                                     <div class="text-center">
                                         <input type="submit" tabindex="4" class="btn btn-danger" value="Registrar">
@@ -63,7 +62,7 @@
                                     <b>Login</b>
                                 </div>
 
-                                <form action="/login" method="POST">
+                                <form id="login">
 
                                     <input type="text" name="username" tabindex="1" class="form-control login my-3" placeholder="Usuario">
                                     <input type="password" name="password" tabindex="2" class="form-control login my-3" placeholder="Senha">
@@ -86,7 +85,7 @@
                     </li>
 
                     <!-- <% } else { %> -->
-                    <!-- Pos login / Jogar -->
+                    <!-- Jogar -->
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
                         <div class="dropdown-menu bg-dark">
@@ -100,7 +99,7 @@
                     <!-- <% } %> -->
                 </ul>
 
-                <form action="/search" class="form-inline my-2" method="POST">
+                <form action="/search" class="form-inline my-2" id="search" method="POST">
                     <input name="search" class="form-control search mr-2 ml-4" type="search" placeholder="Buscar">
                     <button class="btn btn-sm btn-danger" type="submit">
                         <span class="fa fa-search"> </span>
@@ -109,7 +108,7 @@
             </div>
         </div>
     </nav>
-    <script src="js/isUserAvailable.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>

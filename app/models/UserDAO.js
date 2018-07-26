@@ -19,18 +19,18 @@ UserDAO.prototype.newUser = function (user, res) {
                             msg: 'Usuario indisponivel'
                         }
                     })
-            return
-        }
+                    return
+                }
                 client.close()
                 res.render('global/error', {
-                data: {
-                    type: 'success',
-                    msg: 'usuario cadastrado',
-                    url: '/'
-                }
+                    data: {
+                        type: 'success',
+                        msg: 'usuario cadastrado',
+                        url: '/'
+                    }
+                })
             })
-            })
-})
+        })
     })
 }
 
