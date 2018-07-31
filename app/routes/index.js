@@ -11,11 +11,8 @@ module.exports = function (application) {
     application.get('/documentation', function (req, res) {
         application.app.controllers.index.documentation(application, req, res)
     })
-    application.get('/navbar', function (req, res) {
-        application.app.controllers.index.navbar(application, req, res)
-    })
-    application.post('/search', function (req, res) {
-        application.app.controllers.index.search(application, req, res)
+    application.post('/', (req, res) => {
+        application.app.controllers.login.login(application, req, res)
     })
     application.get('/system', function (req, res) {
         application.app.controllers.index.system(application, req, res)

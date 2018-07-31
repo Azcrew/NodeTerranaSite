@@ -27,7 +27,8 @@
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "express-validator": "^5.2.0",
-    "mongodb": "^2.2.36"
+    "mongodb": "^2.2.36",
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {}
 }

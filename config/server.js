@@ -18,8 +18,8 @@ app.use(expressValidator())
 
 app.use(expressSession({
     secret: "qpzmwonxeibcrubvtyçalskdjfhg",
-    resave: false, 
-    saveUninitialized: false
+    resave: true, 
+    saveUninitialized: true
 }))
 
 consign()

@@ -2,7 +2,7 @@
 
 <body>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a href="#" class="navbar-brand h1 mb-0"> Terrana </a>
 
@@ -27,9 +27,10 @@
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
-                    <!-- <% if(true) { %> -->
+                    
+                    <!-- <% if(logged) { %> -->
                     <!-- Registrar -->
-                    <li class="dropdown">
+                    <li class="dropdown" id="register-dd">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
                         <div class="dropdown-menu bg-dark">
                             <div class="container">
@@ -38,13 +39,13 @@
                                     <b>Registrar</b>
                                 </div>
 
-                                <form id="register">
+                                <form id="register" action="/login" method="POST">
                                     <div id="msg"></div>
                                     <input type="text" name="name" id="name" tabindex="1" class="form-control login my-3" placeholder="Nome">
                                     <input type="text" name="username" id="username" tabindex="2" class="form-control login my-3" placeholder="Usuario">
                                     <input type="password" name="password" id="password" tabindex="3" class="form-control login my-3" placeholder="Senha">
                                     <input type="password" name="repeat" id="repeat" tabindex="4" class="form-control login my-3" placeholder="Repetir Senha">
-                                    
+
                                     <div class="text-center">
                                         <input type="submit" tabindex="4" class="btn btn-danger" value="Registrar">
                                     </div>
@@ -53,7 +54,7 @@
                         </div>
                     </li>
                     <!-- Login -->
-                    <li class="dropdown">
+                    <li class="dropdown" id="login-dd">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Login</a>
                         <div class="dropdown-menu bg-dark">
                             <div class="container">
@@ -64,8 +65,8 @@
 
                                 <form id="login">
 
-                                    <input type="text" name="username" tabindex="1" class="form-control login my-3" placeholder="Usuario">
-                                    <input type="password" name="password" tabindex="2" class="form-control login my-3" placeholder="Senha">
+                                    <input type="text" name="username" id="luser" tabindex="1" class="form-control login my-3" placeholder="Usuario">
+                                    <input type="password" name="password" id="lpass" tabindex="2" class="form-control login my-3" placeholder="Senha">
 
                                     <div class="form-row">
                                         <div class="form-group col-8">

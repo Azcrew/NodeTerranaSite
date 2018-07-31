@@ -1,8 +1,8 @@
 $(document).ready(() => {
+    // Usuario dispnivel
     $('#username').change(function () {
         $.ajax({
             url: 'http://' + window.location.hostname + ':8000/user/' + $(this).val(),
-            //method: 'GET',
             success: (res) => {
                 if (res == 1) {
                     $('#msg').addClass('alert alert-danger text-sm-center')
@@ -16,29 +16,37 @@ $(document).ready(() => {
             }
         })
     })
-    $('#login').submit(() => {
-        alert()
-    })
-    $('#register').submit(() => {
-        alert()
-        var url = 'http://' + window.location.hostname + ':8000/user'
-        console.log(url)
-        var data = {
-            name: $('#name').val(),
-            username: $('#username').val(),
-            password: $('#password').val(),
-            repeat: $('#repeat').val(),
-        }
 
+    // Request Login
+    $('#login').submit(() => {
         $.ajax({
-            url: url,
+            url: 'http://' + window.location.hostname + ':8000/login',
             method: 'POST',
-            //type: "POST",
-            data: data,
-            dataType: 'application/x-www-form-urlencoded',
-            success: function (res) {
-                alert(res)
+            data: {
+                username: $('#luser').val(),
+                password: $('#lpass').val(),
+            },
+            success: () => {
+                console.log(res)
+                
                 window.location.href = 'http://' + window.location.host
+            }
+        })
+        return false;
+    })
+    // Request Register
+    $('#register').submit(() => {
+        $.ajax({
+            url: 'http://' + window.location.hostname + ':8000/user',
+            method: 'POST',
+            data: {
+                name: $('#name').val(),
+                username: $('#username').val(),
+                password: $('#password').val(),
+                repeat: $('#repeat').val(),
+            },
+            success: () => {
+                $('#register-dd').dropdown('toggle')
             }
         })
         return false;
