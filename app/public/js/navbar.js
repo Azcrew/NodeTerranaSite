@@ -2,7 +2,7 @@ $(document).ready(() => {
     // Usuario dispnivel
     $('#username').change(function () {
         $.ajax({
-            url: 'http://' + window.location.hostname + ':8000/user/' + $(this).val(),
+            url: 'http://' + window.location.hostname + ':3000/user/' + $(this).val(),
             success: (res) => {
                 if (res == 1) {
                     $('#msg').addClass('alert alert-danger text-sm-center')
@@ -20,13 +20,13 @@ $(document).ready(() => {
     // Request Login
     $('#login').submit(() => {
         $.ajax({
-            url: 'http://' + window.location.hostname + ':8000/login',
+            url: 'http://' + window.location.hostname + ':3000/login',
             method: 'POST',
             data: {
                 username: $('#luser').val(),
                 password: $('#lpass').val(),
             },
-            success: () => {
+            success: (res) => {
                 console.log(res)
                 
                 window.location.href = 'http://' + window.location.host
@@ -37,7 +37,7 @@ $(document).ready(() => {
     // Request Register
     $('#register').submit(() => {
         $.ajax({
-            url: 'http://' + window.location.hostname + ':8000/user',
+            url: 'http://' + window.location.hostname + ':3000/user',
             method: 'POST',
             data: {
                 name: $('#name').val(),

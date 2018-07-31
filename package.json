@@ -1,14 +1,14 @@
 {
-  "name": "terrana-server",
+  "name": "terrana-game-server",
   "version": "1.0.0",
   "description": "an server to web page, api and mobile application",
   "main": "app.js",
   "scripts": {
-    "start": "sudo nodemon app.js"
+    "start": "npm i && nodemon app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@terrana.ddns.net/home/git/back-end"
+    "url": "git@terrana.ddns.net/server"
   },
   "keywords": [
     "node.js",
@@ -22,7 +22,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "connect-multiparty": "^2.1.1",
     "consign": "^0.1.6",
+    "crypto": "^1.0.1",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
