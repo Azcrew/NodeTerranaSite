@@ -1,6 +1,10 @@
-module.exports = (application) => {
+module.exports = (application) => {    
     application.get('/api', (req, res) => {
-        res.json({ msg: 'Get' })
+        application.config.mongo('user', (err, collection) => {
+            collection.find().toArray((err, data) => {
+                res.json({ data })
+            })
+        })
     })
     application.get('/api/:id', (req, res) => {
         res.json({ msg: 'Get By Id', body: req.params.id })

@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    var socket = io('http://' + window.location.hostname + ':3000')
+    var socket = io.connect('http://' + window.location.hostname + ':3000')
 
     socket.on('masterLogin', (master) => {
 
@@ -9,7 +9,7 @@ $(document).ready(() => {
 
     $().ready(function () {
         $.ajax({
-            url: '/navbar/false',
+            url: '/navbar',
             method: 'GET',
             success: (res) => {
                 $('#default-navbar').html(res)

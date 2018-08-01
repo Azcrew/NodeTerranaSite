@@ -1,17 +1,16 @@
 {
   "name": "terrana-game-server",
   "version": "1.0.0",
-  "description": "an server to web page, api and mobile application",
+  "description": "Websocket and Javascript restfull api and webpage to Terrana RPG Games",
   "main": "app.js",
+  "homepage": "https://azcrew.ddns.net",
   "scripts": {
-    "start": "npm i && nodemon app.js"
+    "start": "npm i && sudo nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@terrana.ddns.net/server"
-  },
+  "repository": "github:azcrew/NodeTerranaSite",
   "keywords": [
-    "node.js",
+    "websocket",
+    "javascript",
     "restfull",
     "api",
     "terrana",
@@ -21,16 +20,18 @@
   "author": "Bruno José Spolavori",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "connect-multiparty": "^2.1.1",
-    "consign": "^0.1.6",
-    "crypto": "^1.0.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
-    "express-validator": "^5.2.0",
-    "mongodb": "^2.2.36",
-    "socket.io": "^2.1.1"
+    "body-parser": ">=1.18.3",
+    "connect-multiparty": ">=2.1.1",
+    "consign": ">=0.1.6",
+    "crypto": ">=1.0.1",
+    "ejs": ">=2.6.1",
+    "express": ">=4.16.3",
+    "express-session": ">=1.15.6",
+    "express-validator": ">=5.2.0",
+    "mongodb": ">=3.1.1",
+    "socket.io": ">=2.1.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": ">=1.18.3"
+  }
 }

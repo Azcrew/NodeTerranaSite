@@ -13,32 +13,23 @@ app.set('views', './app/views')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ 'extended': true }))
 
-app.use(express.static('./app/public'))
+app.use(express.static('./app/public', { dotfiles: 'allow' }))
 
 app.use(expressSession({
-    secret: "qpzmwonxeibcrubvtyçalskdjfhg",
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    secret: "qpzmwonxeibcrubvtyçalskdjfhgmooncake"
 }))
 app.use(expressValidator())
 
 app.use(multiParty())
 
-// app.use((req, res, next) => {
-
-//     res.setHeader('Access-Control-Allow-Origin', '*')
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
-//     res.setHeader('Access-Control-Allow-Credentials', true)
-    
-//     next()
-// })
-
 consign()
-.include('./config/dbConn.js')
-    .then('./app/routes')
+.include('./config/mongo.js')
     .then('./app/controllers')
     .then('./app/models')
+    .then('./app/routes')
+    .then('./app/socket')
     .into(app)
 
 module.exports = app

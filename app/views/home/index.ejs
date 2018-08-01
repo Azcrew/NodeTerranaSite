@@ -17,14 +17,9 @@
 </head>
 
 <body>
-    <div id="default-navbar">
-        <!-- <% if (alert.valid) { %> -->
-        <div class="alert alert-<%= alert.type %>">
-            <%= alert.msg %>
-        </div>
-        <!-- <% } %> -->
-    </div>
+    <div id="default-navbar"> </div>
 
+    <!-- #region carousel -->
     <div id="carouselSite" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselSite" data-slide-to="0" class="active"></li>
@@ -55,6 +50,7 @@
             <span class="sr-only"> Proximo </span>
         </a>
     </div>
+    <!-- endregion -->
 
     <div class="container">
         <div class="row">
@@ -68,7 +64,7 @@
         </div>
     </div>
 
-    <!-- Scroll Spy -->
+    <!-- #region scroll spy -->
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-md-3 col-xl-2 mb-3">
@@ -136,17 +132,17 @@
             </div>
         </div>
     </div>
+    <!-- endregion -->
 
-
-    <!-- CARDS -->
+    <!-- #region cards -->
     <div class="container">
         <div class="row justify-content-sm-center">
 
             <div class="col-sm-6 col-md-4 mb-5">
                 <div class="card">
                     <div class="card-body">
-                        <img height="200" width="200" src="http://2.bp.blogspot.com/_LcZ-pLpey4M/THPFxh1uPRI/AAAAAAAAALE/GhZ71JywLQk/s1600/objetos.bmp"
-                            alt="Imagem Representativa dos Itens de um Jogador">
+                        <!-- <img height="200" width="200" src="http://2.bp.blogspot.com/_LcZ-pLpey4M/THPFxh1uPRI/AAAAAAAAALE/GhZ71JywLQk/s1600/objetos.bmp" -->
+                        <img height="200" width="200" src="https://i.pinimg.com/originals/3b/58/73/3b5873b0cf35a4f35d4186ba190425b6.jpg" alt="Imagem da Lamina de Energia de Zeratul"> alt="Imagem Representativa dos Itens de um Jogador">
                         <h4 class="card-title"> Itens </h4>
                         <h6 class="card-subtitle mb-2 text-muted"> Novos Itens </h6>
                         <p class="card-text"> Lorem ipsum dolor sit amet </p>
@@ -216,8 +212,9 @@
             </div>
         </div>
     </div>
-    <!-- /CARDS -->
+    <!-- endregion -->
 
+    <!-- #region jumbotron -->
     <div class="jumbotron">
         <div class="container">
             <div class="row">
@@ -297,7 +294,9 @@
 
         </div>
     </div>
+    <!-- endregion -->
 
+    <!-- #region form -->
     <div class="container">
         <div class="row">
             <div class="col text-center my-5">
@@ -373,6 +372,8 @@
             </div>
         </div>
     </div>
+    <!-- endregion -->
+
     <div class="container">
 
         <div class="row">
@@ -429,8 +430,7 @@
         </div>
     </div>
 
-    <!-- MODAL -->
-
+    <!-- #region modal -->
     <div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -460,16 +460,17 @@
             </div>
         </div>
     </div>
+    <!-- endregion -->
 
-    <!-- /MODAL -->
-
+    <!-- #region script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
-    <script src="socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.slim.min.js"></script>
     <script src="js/index.js"></script>
+    <!-- endregion -->
 
 </body>
 
