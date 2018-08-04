@@ -1,5 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
+    <title>
+        {{#if title }} {{ title }} {{else}} Terrana {{/if}}
+    </title>
+
+    {{ meta }}
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css"> {{#each link}}
+    <link rel="{{this.rel}}" href="{{this.href}}"> {{/each}}
+</head>
+
 <body>
-<%= username %>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a href="/" class="navbar-brand h1 mb-0"> Terrana </a>
@@ -25,8 +44,18 @@
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
-                    <!-- <% if(!logged) { %> -->
-                    <!-- Registrar -->
+                    {{#if logged }}
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
+                        <div class="dropdown-menu bg-dark">
+                            <div class="container">
+                                <a href="#" class="dropdown-item text-secondary"> Jogar </a>
+                                <a href="#" class="dropdown-item text-secondary"> Mestrar </a>
+                                <a href="#" class="dropdown-item text-secondary"> Espectar </a>
+                            </div>
+                        </div>
+                    </li>
+                    {{else}}
                     <li class="dropdown" id="register-dd">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
                         <div class="dropdown-menu bg-dark">
@@ -50,7 +79,6 @@
                             </div>
                         </div>
                     </li>
-                    <!-- Login -->
                     <li class="dropdown" id="login-dd">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Login</a>
                         <div class="dropdown-menu bg-dark">
@@ -81,20 +109,7 @@
                             </div>
                         </div>
                     </li>
-
-                    <!-- <% } else { %> -->
-                    <!-- Jogar -->
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
-                        <div class="dropdown-menu bg-dark">
-                            <div class="container">
-                                <a href="#" class="dropdown-item text-secondary"> Jogar </a>
-                                <a href="#" class="dropdown-item text-secondary"> Mestrar </a>
-                                <a href="#" class="dropdown-item text-secondary"> Espectar </a>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- <% } %> -->
+                    {{/if}}
                 </ul>
 
                 <form action="/search" class="form-inline my-2" id="search" method="POST">
@@ -106,5 +121,35 @@
             </div>
         </div>
     </nav>
+
+    {{{body}}}
+
+    <footer class="messenger">
+
+        <div class="container-fluid text-right">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle messenger" type="button" id="msgbutton" data-toggle="dropdown">
+                    <i class="fa fa-comment" aria-hidden="true"></i> Global Chat
+                </button>
+                <div class="dropdown-menu" aria-labelledby="msgbutton">
+                    <div class="messenger-box">
+                        <div class="navbar navbar-dark bg-dark">
+                            <a href="" class="navbar-brand mb-0"> Messenger </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/getcontent.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.slim.min.js"></script> {{ script }}
     <script src="js/navbar.js"></script>
 </body>
+
+</html>

@@ -1,25 +1,29 @@
 const bodyParser = require('body-parser')
 const consign = require('consign')
+const exphbs = require('express-handlebars')
 const express = require('express')
 const expressSession = require('express-session')
 const expressValidator = require('express-validator')
-const handlebars = require('express-handlebars')
 const multiParty = require('connect-multiparty')
 
 let app = express()
 
-app.engine('hbs', handlebars({extname: 'html', defaultLayout: 'layout', layoutsDir: './app/views/layout' }))
-app.set('view engine', 'hbs')
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main',
+    extname: 'hbs',
+    layoutsDir: './app/views/layout'
+}));
 app.set('views', './app/views')
+app.set('view engine', 'handlebars')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ 'extended': true }))
 
-app.use(express.static('./app/public', { dotfiles: 'allow' }))
+app.use(express.static('./app/public', { /*dotfiles: 'allow'*/ }))
 
 app.use(expressSession({
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     secret: "qpzmwonxeibcrubvtyçalskdjfhgmooncake",
     cookie: { secure: true }
 }))
