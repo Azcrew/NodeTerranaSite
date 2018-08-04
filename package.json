@@ -20,16 +20,17 @@
   "author": "Bruno José Spolavori",
   "license": "ISC",
   "dependencies": {
-    "body-parser": ">=1.18.3",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-mongo": "^2.0.1",
     "connect-multiparty": ">=2.1.1",
     "consign": ">=0.1.6",
-    "crypto": ">=1.0.1",
-    "ejs": ">=2.6.1",
-    "express": ">=4.16.3",
-    "express-session": ">=1.15.6",
-    "express-validator": ">=5.2.0",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-session": "*",
+    "express-validator": "*",
     "mongodb": ">=3.1.1",
-    "socket.io": ">=2.1.1"
+    "socket.io": "*"
   },
   "devDependencies": {
     "nodemon": ">=1.18.3"
