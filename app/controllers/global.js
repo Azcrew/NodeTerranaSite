@@ -4,9 +4,17 @@ module.exports.contact = function (application, req, res) {
 module.exports.documentation = function (application, req, res) {
     res.render('global/documentation')
 }
+module.exports.messenger = function (application, req, res) {
+    res.render('global/messenger', {
+        logged: req.session.valid,
+        username: req.session.username
+    })
+}
 module.exports.navbar = function (application, req, res) {
-    if (req.sesion) var valid = true
-    res.render('global/navbar', { logged: valid })
+    res.render('global/navbar', {
+        logged: req.session.valid,
+        username: req.session.username
+    })
 }
 module.exports.search = function (application, req, res) {
     res.render('global/search', { result: {} })

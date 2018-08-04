@@ -1,7 +1,11 @@
 const crypto = require('crypto')
+const url = 'http://azcrew.ddns.net'
 
 module.exports.login = (application, req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', url)
+
     let user = req.body
+
     req.assert('username', 'Não pode estar vazio').notEmpty()
     req.assert('password', 'Não pode estar vazio').notEmpty()
 
@@ -15,9 +19,11 @@ module.exports.login = (application, req, res) => {
     application.config.mongo('user', (err, collection) => {
         collection.find(user).toArray((err, data) => {
             if (data.length === 1) {
-                /**
-                 * CREATE SESSION
-                 */
+
+                req.session.id = data[0]._id
+                req.session.username = user.username,
+                req.session.valid = true
+
                 res.json({
                     msg: 'Entrou',
                     valid: true
@@ -33,7 +39,10 @@ module.exports.login = (application, req, res) => {
     })
 }
 module.exports.create = (application, req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', url)
+
     let user = req.body
+
     req.assert('name', 'cannot empty').notEmpty()
     req.assert('username', 'cannot empty').notEmpty()
     req.assert('password', 'cannot empty').notEmpty()
@@ -63,7 +72,10 @@ module.exports.create = (application, req, res) => {
     })
 }
 module.exports.check = (application, req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
     let user = req.params.username || {}
+
     application.config.mongo('user', (err, collection) => {
         collection.find({ username: user }).toArray(function (err, data) {
             res.json(data.length)
