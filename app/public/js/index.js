@@ -1,19 +1,10 @@
 $(document).ready(() => {
-    var socket = io.connect('http://' + window.location.hostname + ':3000')
+    var socket = io.connect('https://' + window.location.hostname + ':443')
 
-    socket.on('masterLogin', (master) => {
-
-        $('#chat-news').html = 'O Mestre ' + master.username + ' acaba de entrar'
-
-    })
-
-    $().ready(function () {
-        $.ajax({
-            url: '/navbar',
-            method: 'GET',
-            success: (res) => {
-                $('#default-navbar').html(res)
-            }
-        })
+    socket.on('disconnect', () => {
+        // ;D Temp code to simp view
+        setTimeout(() => {
+            location.reload()
+        }, 1500)
     })
 })

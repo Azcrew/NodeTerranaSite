@@ -19,137 +19,143 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a href="/" class="navbar-brand h1 mb-0"> Terrana </a>
+    <div class="row">
+        <div class="col p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a href="/" class="navbar-brand h1 mb-0"> Terrana </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSite">
-                <ul class="navbar-nav mr-auto">
-                    <li class="navbar-item">
-                        <a href="/system" class="nav-link"> Sistema </a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="/documentation" class="nav-link"> Documentação </a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="/api" class="nav-link"> API </a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="/contact" class="nav-link"> Contatos </a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav ml-auto">
-                    {{#if logged }}
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
-                        <div class="dropdown-menu bg-dark">
-                            <div class="container">
-                                <a href="#" class="dropdown-item text-secondary"> Jogar </a>
-                                <a href="#" class="dropdown-item text-secondary"> Mestrar </a>
-                                <a href="#" class="dropdown-item text-secondary"> Espectar </a>
-                            </div>
-                        </div>
-                    </li>
-                    {{else}}
-                    <li class="dropdown" id="register-dd">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
-                        <div class="dropdown-menu bg-dark">
-                            <div class="container">
-
-                                <div class="text-center text-muted h4">
-                                    <b>Registrar</b>
-                                </div>
-
-                                <form id="register" action="/login" method="POST">
-                                    <div id="msg"></div>
-                                    <input type="text" name="name" id="name" tabindex="1" class="form-control login my-3" placeholder="Nome">
-                                    <input type="text" name="username" id="username" tabindex="2" class="form-control login my-3" placeholder="Usuario">
-                                    <input type="password" name="password" id="password" tabindex="3" class="form-control login my-3" placeholder="Senha">
-                                    <input type="password" name="repeat" id="repeat" tabindex="4" class="form-control login my-3" placeholder="Repetir Senha">
-
-                                    <div class="text-center">
-                                        <input type="submit" tabindex="4" class="btn btn-danger" value="Registrar">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="dropdown" id="login-dd">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Login</a>
-                        <div class="dropdown-menu bg-dark">
-                            <div class="container">
-
-                                <div class="text-center text-muted h4">
-                                    <b>Login</b>
-                                </div>
-
-                                <form id="login">
-
-                                    <input type="text" name="username" id="luser" tabindex="1" class="form-control login my-3" placeholder="Usuario">
-                                    <input type="password" name="password" id="lpass" tabindex="2" class="form-control login my-3" placeholder="Senha">
-
-                                    <div class="form-row">
-                                        <div class="form-group col-8">
-                                            <div class="form-check">
-                                                <label for="remember" class="form-check-label text-muted">
-                                                    <input type="checkbox" tabindex="3" name="remember" id="remember" class="form-check-input"> Lembrar
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="submit" tabindex="4" class="btn btn-danger" value="Login">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-                    {{/if}}
-                </ul>
-
-                <form action="/search" class="form-inline my-2" id="search" method="POST">
-                    <input name="search" class="form-control search mr-2 ml-4" type="search" placeholder="Buscar">
-                    <button class="btn btn-sm btn-danger" type="submit">
-                        <span class="fa fa-search"> </span>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                </form>
-            </div>
-        </div>
-    </nav>
 
-    {{{body}}}
+                    <div class="collapse navbar-collapse" id="navbarSite">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="navbar-item">
+                                <a href="/system" class="nav-link"> Sistema </a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="/documentation" class="nav-link"> Documentação </a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="/api" class="nav-link"> API </a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="/contact" class="nav-link"> Contatos </a>
+                            </li>
+                        </ul>
 
-    <footer class="messenger">
+                        <ul class="navbar-nav ml-auto">
+                            {{#if logged }}
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
+                                <div class="dropdown-menu bg-dark">
+                                    <div class="container">
+                                        <a href="#" class="dropdown-item text-secondary"> Jogar </a>
+                                        <a href="#" class="dropdown-item text-secondary"> Mestrar </a>
+                                        <a href="#" class="dropdown-item text-secondary"> Espectar </a>
+                                    </div>
+                                </div>
+                            </li>
+                            {{else}}
+                            <li class="dropdown" id="register-dd">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
+                                <div class="dropdown-menu bg-dark">
+                                    <div class="container">
 
-        <div class="container-fluid text-right">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle messenger" type="button" id="msgbutton" data-toggle="dropdown">
-                    <i class="fa fa-comment" aria-hidden="true"></i> Global Chat
-                </button>
-                <div class="dropdown-menu" aria-labelledby="msgbutton">
-                    <div class="messenger-box">
-                        <div class="navbar navbar-dark bg-dark">
-                            <a href="" class="navbar-brand mb-0"> Messenger </a>
-                        </div>
+                                        <div class="text-center text-muted h4">
+                                            <b>Registrar</b>
+                                        </div>
+
+                                        <form id="register" action="/login" method="POST">
+                                            <div id="msg"></div>
+                                            <input type="text" name="name" id="name" tabindex="1" class="form-control login my-3" placeholder="Nome">
+                                            <input type="text" name="username" id="username" tabindex="2" class="form-control login my-3" placeholder="Usuario">
+                                            <input type="password" name="password" id="password" tabindex="3" class="form-control login my-3" placeholder="Senha">
+                                            <input type="password" name="repeat" id="repeat" tabindex="4" class="form-control login my-3" placeholder="Repetir Senha">
+
+                                            <div class="text-center">
+                                                <input type="submit" tabindex="4" class="btn btn-danger" value="Registrar">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown" id="login-dd">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Login</a>
+                                <div class="dropdown-menu bg-dark">
+                                    <div class="container">
+
+                                        <div class="text-center text-muted h4">
+                                            <b>Login</b>
+                                        </div>
+
+                                        <form id="login">
+
+                                            <input type="text" name="username" id="luser" tabindex="1" class="form-control login my-3" placeholder="Usuario">
+                                            <input type="password" name="password" id="lpass" tabindex="2" class="form-control login my-3" placeholder="Senha">
+
+                                            <div class="form-row">
+                                                <div class="ml-auto">
+                                                    <input type="submit" tabindex="4" class="btn btn-danger" value="Login">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            {{/if}}
+                        </ul>
+                        {{!-- --}}
+                        <form action="/search" class="form-inline" id="search" method="POST">
+                            <div class="input-group">
+                                <input name="search" class="form-control " type="search" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-sm btn-danger" type="submit">
+                                        <span class="fa fa-search" id="basic-addon1"> </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        {{#if logged}}
+                        <button class="btn btn-dark mx-3" type="button" data-toggle="collapse" data-target="#msg-collapse" aria-expanded="false"
+                            aria-controls="msg-collapse">
+                            <i class="fa fa-comment text-info" aria-hidden="true"></i>
+                        </button>
+                        {{/if}}
+
                     </div>
+
                 </div>
+            </nav>
+
+            {{{body}}}
+        </div>
+        <div class="col-2 px-0" id="msg-collapse">
+            <div class="messenger container">
+                <a class="btn btn-dark mx-3 mx-lg-5 text-white-50" data-toggle="collapse" href="#msg-collapse" role="button" aria-expanded="false" aria-controls="msg-collapse">
+                    Global Messenger
+                    <i class="fa fa-comment text-info" aria-hidden="true"></i>
+                </a>
+                {{!--
+                <div class="collapse navbar-collapse" id="messenger">
+                    <div class="row justify-content-sm-center">
+                        <div id="rooms"></div>
+                    </div>
+                </div> --}}
             </div>
         </div>
-    </footer>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/getcontent.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.slim.min.js"></script> {{ script }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.slim.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/messenger.js"></script> {{#each script}}
+    <script src="{{src}}"></script>{{/each}}
 </body>
 
 </html>

@@ -36,7 +36,6 @@ consign()
     .then('./app/controllers')
     .then('./app/models')
     .then('./app/routes')
-    .then('./app/socket')
     .into(app)
 
 module.exports = app

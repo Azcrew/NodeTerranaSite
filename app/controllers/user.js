@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+const bcrypt = require('bcryptjs')
 const url = 'http://azcrew.ddns.net'
 
 module.exports.login = (application, req, res) => {
@@ -6,15 +6,20 @@ module.exports.login = (application, req, res) => {
 
     let user = req.body
 
-    req.assert('username', 'Não pode estar vazio').notEmpty()
-    req.assert('password', 'Não pode estar vazio').notEmpty()
+    req.assert('username', 'Preencha todos os campos').notEmpty()
+    req.assert('password', 'Preencha todos os campos').notEmpty()
 
     if (err = req.validationErrors()) {
         res.json(err[0])
         return
     }
+
     user.username = user.username.toLowerCase()
-    user.password = crypto.createHash('md5').update(user.password).digest('hex')
+    bcrypt.genSalt(10, function (err, salt) {
+        bcrypt.hash(user.password, salt, function (err, hash) {
+            user.password = hash
+        });
+    });
 
     application.config.mongo('user', (err, collection) => {
         collection.find(user).toArray((err, data) => {
@@ -22,7 +27,7 @@ module.exports.login = (application, req, res) => {
 
                 req.session.id = data[0]._id
                 req.session.username = user.username,
-                req.session.valid = true
+                    req.session.valid = true
 
                 res.json({
                     msg: 'Entrou',
@@ -53,10 +58,13 @@ module.exports.create = (application, req, res) => {
         return
     }
     user.username = user.username.toLowerCase()
-    user.password = crypto.createHash('md5').update(user.password).digest('hex')
+    bcrypt.genSalt(10, function (err, salt) {
+        bcrypt.hash(user.password, salt, function (err, hash) {
+            user.password = hash
+        });
+    });
     delete user.repeat
 
-    console.log(user)
     application.config.mongo('user', (err, collection) => {
         collection.find({ username: user.username }).toArray(function (err, data) {
             if (data.length == 0) {

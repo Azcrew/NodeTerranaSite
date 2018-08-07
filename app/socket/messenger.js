@@ -1,6 +1,7 @@
 module.exports = (io) => {
-    io.on('connection', (socket) => {
-        console.log('User ' + socket.id + ' Connected on Socket')
+    var messenger = io.of('/messenger')
+    messenger.on('connection', (socket) => {
+        console.log('User ' + socket.id + ' Connected Messenger')
 
         socket.on('', (socket) => {
 

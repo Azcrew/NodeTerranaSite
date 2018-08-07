@@ -11,4 +11,72 @@
 </div>
 
 <div class="alert alert-dark">Documentação</div>
-<div class="container">SpyScroll</div>
+<!-- #region scroll spy --> 
+    <div class="container"> 
+        <div class="row"> 
+            <div class="col-sm-4 col-md-3 col-xl-2 mb-3"> 
+                <nav id="navbarVertical" class="navbar navbar-dark bg-dark"> 
+                    <nav class="nav nav-pills flex-column"> 
+                        <a href="#item1" class="nav-link active"> Jogador </a> 
+                        <nav class="nav nav-pills flex-column ml-3"> 
+                            <a href="#item1-1" class="nav-link"> Criar </a> 
+                            <a href="#item1-2" class="nav-link"> Ver </a> 
+                            <a href="#item1-3" class="nav-link"> Jogar </a> 
+                        </nav> 
+                        <a href="#item2" class="nav-link mt-2"> Mestre </a> 
+                        <nav class="nav nav-pills flex-column ml-3"> 
+                            <a href="#item2-1" class="nav-link"> Sistema </a> 
+                            <a href="#item2-2" class="nav-link"> NPC's </a> 
+                            <a href="#item2-3" class="nav-link"> Mestrar </a> 
+                        </nav> 
+                        <a href="#item3" class="nav-link mt-2"> Espectador </a> 
+                    </nav> 
+                </nav> 
+            </div> 
+ 
+            <div class="col-sm-8 col-md-9 col-xl-10"> 
+                <div data-spy="scroll" data-target="#navbarVertical" data-offset="0" class="scrollspysite"> 
+                    <h4 id="item1">Jogador</h4> 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> 
+ 
+                    <h5 id="item1-1">Criar</h5> 
+                    <p> 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget justo tincidunt, laoreet erat ut, sollicitudin nunc. Nulla 
+                    </p> 
+                    <h5 id="item1-2">Ver</h5> 
+                    <p> 
+                        Suspendisse aliquet erat ac erat venenatis vehicula. Integer consectetur porta quam et fermentum. Integer eget tristique 
+                    </p> 
+                    <h5 id="item1-3">Jogar</h5> 
+                    <p> 
+                        Nam non elit urna. Maecenas nec dui tristique, congue mauris fermentum, tincidunt urna. Duis consequat augue leo, id facilisis 
+                    </p> 
+ 
+                    <h4 id="item2">Mestre</h4> 
+                    <p> 
+                        Mauris auctor lobortis est nec viverra. Integer quis sem vitae nunc vehicula vehicula. Sed eget ante at ex maximus consectetur. 
+                    </p> 
+                    <h5 id="item2-1">Sistema</h5> 
+                    <p> 
+                        Curabitur sem mi, hendrerit ac accumsan at, maximus in sem. Pellentesque id neque vitae ex aliquam lacinia ac a lorem. Nunc 
+                    </p> 
+                    <h5 id="item2-2">NPC's</h5> 
+                    <p> 
+                        Etiam at tortor enim. Sed sagittis blandit sapien, ac vestibulum urna dapibus eget. Aenean a metus congue, congue lorem et, 
+                    </p> 
+                    <h5 id="item2-3">Mestrar</h5> 
+                    <p> 
+                        Nunc ut elit et felis vehicula rutrum. Aliquam erat volutpat. Donec et finibus est, eget viverra metus. Praesent iaculis 
+                    </p> 
+ 
+                    <h4 id="item3">Espectador</h4> 
+                    <p> 
+                        Sed lacinia, sem sollicitudin iaculis vehicula, orci ex tincidunt enim, maximus varius lorem dui non sapien. Nam tristique 
+                    </p> 
+ 
+                </div> 
+ 
+            </div> 
+        </div> 
+    </div> 
+    <!-- endregion --> 
