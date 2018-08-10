@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars')
 const express = require('express')
 const expressSession = require('express-session')
 const expressValidator = require('express-validator')
+const MongoStore = require('connect-mongo')(expressSession)
 const multiParty = require('connect-multiparty')
 
 let app = express()
@@ -30,12 +31,15 @@ app.use(express.static('./app/public', {
     }
 }))
 
-
 app.use(expressSession({
+    cookie: { secure: true },
     resave: false,
     saveUninitialized: false,
     secret: "qpzmwonxeibcrubvtyçalskdjfhgmooncake",
-    cookie: { secure: true }
+    store: new MongoStore({
+        url: 'mongodb://azcrew.ddns.net/terrana',
+        ttl: 24 * 24 * 60 * 60
+    })
 }))
 app.use(expressValidator())
 
