@@ -1,6 +1,6 @@
 module.exports.home = function (application, req, res) {
     res.render('home/index', {
-        logged: true,
+        logged: req.session.valid,
         script: [{
             src: 'js/index.js'
         }]

@@ -30,7 +30,7 @@ $(document).ready(() => {
             success: (res) => {
                 console.log(res)
                 
-                window.location.href = 'https://' + window.location.host
+                window.location.href = 'https://' + window.location.host + '/?msg=' + res.msg
             }
         })
         return false;
