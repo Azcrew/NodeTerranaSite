@@ -2,7 +2,7 @@ $(document).ready(() => {
     $('#header').html("Global Chat")
     $('#messenger').html('')
     
-    var socket = io('/chat')
+    var socket = io('/messenger')
     console.log(socket)
     socket.on('disconnect', () => {
         // ;D Temp code to simp view
