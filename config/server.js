@@ -19,7 +19,17 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ 'extended': true }))
 
-app.use(express.static('./app/public', { /*dotfiles: 'allow'*/ }))
+app.use(express.static('./app/public', {
+    // dotfiles: 'allow',
+    maxage: '10d',
+    setHeaders: function (res, path) {
+        res.setHeader('Vary', 'Accept-Encoding')
+        res.setHeader('Accept-Encoding', 'gzip')
+        res.setHeader("Cache-Control", "public, max-age=2592000");
+        res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
+    }
+}))
+
 
 app.use(expressSession({
     resave: false,
@@ -30,6 +40,13 @@ app.use(expressSession({
 app.use(expressValidator())
 
 app.use(multiParty())
+
+app.use('/*', (req, res, next) => {
+    res.setHeader('Vary', 'Accept-Encoding')
+    res.setHeader('Accept-Encoding', 'gzip')
+
+    next();
+});
 
 consign()
     .include('./config/mongo.js')

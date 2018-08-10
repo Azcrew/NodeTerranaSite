@@ -13,14 +13,15 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css"> {{#each link}}
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/messenger.css"> {{#each link}}
     <link rel="{{this.rel}}" href="{{this.href}}"> {{/each}}
 </head>
 
 <body>
-    <div class="row">
-        <div class="col p-0">
+    <div class="wrapper">
+        <div id="content">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
                     <a href="/" class="navbar-brand h1 mb-0"> Terrana </a>
@@ -48,18 +49,18 @@
                         <ul class="navbar-nav ml-auto">
                             {{#if logged }}
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
+                                <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown"> Jogar </a>
                                 <div class="dropdown-menu bg-dark">
                                     <div class="container">
-                                        <a href="#" class="dropdown-item text-secondary"> Jogar </a>
-                                        <a href="#" class="dropdown-item text-secondary"> Mestrar </a>
-                                        <a href="#" class="dropdown-item text-secondary"> Espectar </a>
+                                        <a href="javascript:void(0)" class="dropdown-item text-secondary"> Jogar </a>
+                                        <a href="javascript:void(0)" class="dropdown-item text-secondary"> Mestrar </a>
+                                        <a href="javascript:void(0)" class="dropdown-item text-secondary"> Espectar </a>
                                     </div>
                                 </div>
                             </li>
                             {{else}}
                             <li class="dropdown" id="register-dd">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
+                                <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown">Registrar</a>
                                 <div class="dropdown-menu bg-dark">
                                     <div class="container">
 
@@ -82,7 +83,7 @@
                                 </div>
                             </li>
                             <li class="dropdown" id="login-dd">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Login</a>
+                                <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown">Login</a>
                                 <div class="dropdown-menu bg-dark">
                                     <div class="container">
 
@@ -107,52 +108,123 @@
                             {{/if}}
                         </ul>
                         {{!-- --}}
-                        <form action="/search" class="form-inline" id="search" method="POST">
+                        <form action="/search" class="form-inline mx-3" id="search" method="POST">
                             <div class="input-group">
                                 <input name="search" class="form-control " type="search" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
                                 <div class="input-group-prepend">
                                     <button class="btn btn-sm btn-danger" type="submit">
-                                        <span class="fa fa-search" id="basic-addon1"> </span>
+                                        <span class="fa fa-search"></span>
                                     </button>
                                 </div>
                             </div>
                         </form>
-                        {{#if logged}}
-                        <button class="btn btn-dark mx-3" type="button" data-toggle="collapse" data-target="#msg-collapse" aria-expanded="false"
-                            aria-controls="msg-collapse">
-                            <i class="fa fa-comment text-info" aria-hidden="true"></i>
-                        </button>
-                        {{/if}}
-
                     </div>
 
+
+                    {{#if logged}}
+
+                    <span class="btn btn-dark mx-3" id="sidebar-toggle-a" type="button">
+                        <i class="fa fa-comment text-info" aria-hidden="true"></i>
+                    </span>
+                    {{/if}}
                 </div>
             </nav>
 
             {{{body}}}
+
         </div>
-        <div class="col-2 px-0" id="msg-collapse">
-            <div class="messenger container">
-                <a class="btn btn-dark mx-3 mx-lg-5 text-white-50" data-toggle="collapse" href="#msg-collapse" role="button" aria-expanded="false" aria-controls="msg-collapse">
-                    Global Messenger
-                    <i class="fa fa-comment text-info" aria-hidden="true"></i>
-                </a>
-                {{!--
-                <div class="collapse navbar-collapse" id="messenger">
-                    <div class="row justify-content-sm-center">
-                        <div id="rooms"></div>
-                    </div>
-                </div> --}}
+
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <h4>
+                    <span id="sidebar-toggle-b">
+                        Messenger
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                    </span>
+                </h4>
             </div>
-        </div>
+
+            <ul class="messenger-rooms">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="fas fa-globe"></i>
+                        Global
+                    </a>
+                </li>
+                <li>
+                    <a href="#friendsub" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Amigos</a>
+                    <ul class="collapse list-unstyled" id="friendsub">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-user-check"></i>
+                                Azcrew
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="disable">
+                                <i class="fas fa-user-minus"></i>
+                                Zarkabel
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#gamesub" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="gamesub">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-dice-one"></i>
+                                Assenção do Khala
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-dice-two"></i>
+                                A Torre dos Golens
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-dice-three"></i>
+                                A Queda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-dice-four"></i>
+                                Academia Arcana
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-dice-five"></i>
+                                Arion
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fas fa-dice-six"></i>
+                                Arton
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Portfolio</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Contact</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.slim.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"        crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
     <script src="js/messenger.js"></script> {{#each script}}
     <script src="{{src}}"></script>{{/each}}
