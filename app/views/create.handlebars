@@ -1,0 +1,244 @@
+<div class="row">
+    <div class="col text-center my-5">
+        <h1 class="display-4">
+            <div class="fa fa-paper-plane"></div>
+            Novo Personagem
+        </h1>
+    </div>
+</div>
+
+<div class="justify-content-center mb-5 container">
+    <form action="/create" method="post">
+        <div class="border border-secondary rounded">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nome">
+                </div>
+
+                <div class="form-group col">
+                    <label for="race">Raça</label>
+                    <input type="text" class="form-control" name="race" id="race" placeholder="Nome">
+                </div>
+
+                <div class="form-group col">
+                    <label for="class">Classe</label>
+                    <input type="text" class="form-control" name="class" id="class" placeholder="Classe">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="level">Nível</label>
+                    <input type="number" class="form-control" name="level" id="level" placeholder="Nível">
+                </div>
+                <div class="form-group col">
+                    <label for="points">Pontos</label>
+                    <input type="number" class="form-control" name="points" id="points" placeholder="Pontos">
+                </div>
+                <div class="form-group col">
+                    <label for="paragon">Excelência</label>
+                    <input type="number" class="form-control" name="paragon" id="paragon" placeholder="Excelência">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+                <div class="border border-secondary rounded">
+                    <Label>Caracteristicas</Label>
+                    <div class="row">
+                        <div class="col-2"> Arm </div>
+                        <div class="col-10"><input type="number" class="form-control" name="arm" id="arm" placeholder="Armadura"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Foc </div>
+                        <div class="col-10"><input type="number" class="form-control" name="foc" id="foc" placeholder="Focus"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> For </div>
+                        <div class="col-10"><input type="number" class="form-control" name="for" id="for" placeholder="Força"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Hab </div>
+                        <div class="col-10"><input type="number" class="form-control" name="hab" id="hab" placeholder="Habilidade"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Pre </div>
+                        <div class="col-10"><input type="number" class="form-control" name="pre" id="pre" placeholder="Precisão"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Res </div>
+                        <div class="col-10"><input type="number" class="form-control" name="res" id="res" placeholder="Resistencia"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="border border-secondary rounded">
+                    <label>Focus</label>
+                    <div class="row">
+                        <div class="col-2"> Ag </div>
+                        <div class="col-10"><input type="number" class="form-control" name="ag" id="ag" placeholder="Agua"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Ar </div>
+                        <div class="col-10"><input type="number" class="form-control" name="ar" id="ar" placeholder="Ar"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Fo </div>
+                        <div class="col-10"><input type="number" class="form-control" name="fo" id="fo" placeholder="Fogo"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Lu </div>
+                        <div class="col-10"><input type="number" class="form-control" name="lu" id="lu" placeholder="Luz"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Te </div>
+                        <div class="col-10"><input type="number" class="form-control" name="te" id="te" placeholder="Terra"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Tr </div>
+                        <div class="col-10"><input type="number" class="form-control" name="tr" id="tr" placeholder="Trevas"> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="border border-secondary rounded">
+                    <label>Detalhes</label>
+                    <div class="row">
+                        <div class="col-2"> PV </div>
+                        <div class="col-10">
+                            <input type="number" class="form-control" name="pv" id="pv" placeholder="Pts de Vida"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> PM </div>
+                        <div class="col-10"> <input type="number" class="form-control" name="pm" id="pm" placeholder="Pts de Magia">                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> PS </div>
+                        <div class="col-10">
+                            <input type="number" class="form-control" name="ps" id="ps" placeholder="Pts de Stamina"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Gold </div>
+                        <div class="col-10">
+                            <input type="number" class="form-control" name="gold" id="gold" placeholder="Ouro"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Gemas </div>
+                        <div class="col-10">
+                            <input type="number" class="form-control" name="gems" id="gems" placeholder="Gemas"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"> Metais </div>
+                        <div class="col-10">
+                            <input type="number" class="form-control" name="metals" id="metals" placeholder="Metais"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col">
+                <div class="border border-secondary rounded">
+                    <label for="desv">Vantagens</label>
+                    <div class="row">
+                        <div class="col-8 char-name"><input type="text" name="vant0" class="form-control"></div>
+                        <div class="col-4 char-numb"><input type="number" class="form-control" name="vantCost0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="vant1" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="vantCost1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="vant2" class="form-control"></div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="vantCost2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="vant3" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="vantCost3"> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col">
+                <div class="border border-secondary rounded">
+                    <label for="desv">Desvantagens</label>
+                    <div class="row">
+                        <div class="col-8 char-name"><input type="text" name="desv" id="desv" class="form-control"></div>
+                        <div class="col-4 char-numb"><input type="number" class="form-control" name="desvCost0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="desv" id="desv" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="desvCost1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="desv" id="desv" class="form-control"></div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="desvCost2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="desv" id="desv" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="desvCost3"> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col">
+                <div class="border border-secondary rounded">
+                    <label for="know">Perícias</label>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="know" id="know" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="knowCost"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="know" id="know" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="knowCost"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="know" id="know" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="knowCost"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 char-name"> <input type="text" name="know" id="know" class="form-control"> </div>
+                        <div class="col-4 char-numb"> <input type="number" class="form-control" name="knowCost"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col">
+                <label for="items">Itens</label>
+                <input type="text" name="items" id="items" class="form-control">
+                <input type="text" name="items" id="items" class="form-control">
+                <input type="text" name="items" id="items" class="form-control">
+                <input type="text" name="items" id="items" class="form-control">
+            </div>
+
+            <div class="form-group col">
+                <label for="skills">Habilidades</label>
+                <input type="text" name="skills" id="skills" class="form-control">
+                <input type="text" name="skills" id="skills" class="form-control">
+                <input type="text" name="skills" id="skills" class="form-control">
+                <input type="text" name="skills" id="skills" class="form-control">
+            </div>
+
+            <div class="form-group col">
+                <label for="spells">Magias</label>
+                <input type="text" name="spells" id="spells" class="form-control">
+                <input type="text" name="spells" id="spells" class="form-control">
+                <input type="text" name="spells" id="spells" class="form-control">
+                <input type="text" name="spells" id="spells" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="history">Historia do Personagem</label>
+            <textarea class="form-control" name="history" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger"> Criar </button>
+    </form>
+</div>
+</div>
+</div>

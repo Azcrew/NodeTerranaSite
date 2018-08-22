@@ -5,9 +5,7 @@ body{
     padding-top: 0px;
     overflow-x:hidden;
 }
-input.login{
-    width: 250px;
-}
+input.login
 input.search{
     width: 250px;
 }
@@ -26,7 +24,24 @@ input.search{
     overflow: auto;
     height: 400px;
 }
-
 ul.dropdown-lr {
     width: 300px;
+}
+div.border {
+    padding: .7rem;
+    margin: .3rem;
+}
+input.form-control{
+    padding: .3rem;
+    margin: .3rem;
+}
+
+.col-2{
+    padding-top: 10px;
+}
+.char-name{
+    padding-right: 3px;
+}
+.char-numb{
+    padding-left: 3px;
 }

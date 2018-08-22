@@ -22,13 +22,13 @@ app.use(bodyParser.urlencoded({ 'extended': true }))
 
 app.use(express.static('./app/public', {
     // dotfiles: 'allow',
-    maxage: '10d',
-    setHeaders: function (res, path) {
-        res.setHeader('Vary', 'Accept-Encoding')
-        res.setHeader('Accept-Encoding', 'gzip')
-        res.setHeader("Cache-Control", "public, max-age=2592000");
-        res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
-    }
+    // maxage: '10d',
+    // setHeaders: function (res, path) {
+    //     res.setHeader('Vary', 'Accept-Encoding')
+    //     res.setHeader('Accept-Encoding', 'gzip')
+    //     res.setHeader("Cache-Control", "public, max-age=2592000");
+    //     res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
+    // }
 }))
 
 app.use(expressSession({
